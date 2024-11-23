@@ -1,0 +1,40 @@
+{
+    "conventionalCommits.scopes": [
+        // Application Structure
+        "app", // Application-wide changes
+        "pages", // Modifications to individual Next.js pages
+        "components", // Updates to reusable UI components
+        "layout", // Changes to global layout elements (e.g., header, footer, navigation)
+        "hooks", // Custom React hooks
+        "utils", // Utility functions and helper methods
+        "state", // State management (e.g., Redux, Context API)
+        "context", // Context API implementations
+        
+        // Styling
+        "styles", // General styling changes
+        "theme", // Tailwind CSS theme configurations
+        
+        // shadcn/ui Specific
+        "ui", // shadcn/ui component updates
+        "tokens", // Design tokens (e.g., colors, spacing)
+        "variants", // Component variants
+        "dark-mode", // Dark mode specific changes
+        
+        // Tooling and Infrastructure
+        "config", // Configuration files (e.g., eslint, tailwind.config.js)
+        "deps", // Dependency management
+        "ci", // Continuous Integration setups
+        "build", // Build process configurations
+        "lint", // Linting rules and fixes
+        "testing", // Testing frameworks and test cases
+        "scripts", // NPM scripts and package.json updates
+        "env", // Environment variables and .env files
+
+        // Documentation and Miscellaneous
+        "docs", // Documentation updates
+        "setup", // Initial project setup
+        "security", // Security-related changes
+        "accessibility", // Accessibility improvements
+        "init" // Initial commits to a new repository
+    ]
+}
