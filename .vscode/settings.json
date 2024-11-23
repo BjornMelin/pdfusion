@@ -46,6 +46,7 @@
         "docs", // Documentation updates
         "setup", // Initial project setup
         "security", // Security-related changes
-        "accessibility" // Accessibility improvements
+        "accessibility", // Accessibility improvements
+        "init" // Initial commits to a new repository
     ]
 }
