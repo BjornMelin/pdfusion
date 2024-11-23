@@ -1,41 +1,55 @@
 {
     "conventionalCommits.scopes": [
-        // Application Structure
-        "app", // Application-wide changes
-        "pages", // Modifications to individual Next.js pages
-        "components", // Updates to reusable UI components
-        "layout", // Changes to global layout elements (e.g., header, footer, navigation)
-        "hooks", // Custom React hooks
-        "utils", // Utility functions and helper methods
-        "state", // State management (e.g., Redux, Context API)
-        "context", // Context API implementations
+        // Core functionality
+        "core", // Central logic or main application framework
+        "api", // API endpoints or service layers
+        "cli", // Command-line interface tools or scripts
+        "models", // Database models or data schemas
+        "services", // External services or integrations
         
-        // Styling
-        "styles", // General styling changes
-        "theme", // Tailwind CSS theme configurations
+        // Features and functionality
+        "auth", // Authentication and authorization logic
+        "logic", // Application-specific business logic
+        "db", // Database changes (migrations, queries)
+        "ui", // User interface or frontend changes
+        "tasks", // Background tasks or job processing (e.g., Celery)
         
-        // shadcn/ui Specific
-        "ui", // shadcn/ui component updates
-        "tokens", // Design tokens (e.g., colors, spacing)
-        "variants", // Component variants
-        "dark-mode", // Dark mode specific changes
+        // Configuration and dependencies
+        "config", // Configuration files or environment setup
+        "deps", // Dependency updates (e.g., requirements.txt)
+        "env", // Environment-related changes (e.g., .env files)
         
-        // Tooling and Infrastructure
-        "config", // Configuration files (e.g., eslint, tailwind.config.js)
-        "deps", // Dependency management
-        "ci", // Continuous Integration setups
-        "build", // Build process configurations
-        "lint", // Linting rules and fixes
-        "testing", // Testing frameworks and test cases
-        "scripts", // NPM scripts and package.json updates
-        "env", // Environment variables and .env files
+        // Testing and quality
+        "tests", // Unit tests, integration tests, or mocking
+        "qa", // Quality assurance (linters, type checks, etc.)
+        "coverage", // Code coverage configurations or reports
+        
+        // Documentation
+        "docs", // Documentation updates (README, inline comments)
+        "examples", // Example scripts or usage guides
+        "tutorials", // Tutorials or learning materials
+        
+        // DevOps and deployment
+        "ci", // Continuous Integration workflows or pipelines
+        "cd", // Continuous Deployment scripts or setups
+        "infra", // Infrastructure changes (Dockerfiles, Terraform)
+        "build", // Build process updates (e.g., PyInstaller, packaging)
+        
+        // Fixes and maintenance
+        "bug", // Bug fixes or patches
+        "refactor", // Code restructuring without functional changes
+        "perf", // Performance optimizations
+        "security", // Security-related changes (vulnerability fixes)
 
-        // Documentation and Miscellaneous
-        "docs", // Documentation updates
-        "setup", // Initial project setup
-        "security", // Security-related changes
-        "accessibility", // Accessibility improvements
-        "init" // Initial commits to a new repository
+        // Styling and user experience
+        "styles", // Code style, formatting, or aesthetic updates
+        "i18n", // Internationalization and localization changes
+        "ux", // User experience improvements
+        
+        // Miscellaneous
+        "release", // Versioning or release preparation
+        "meta", // Updates to meta files (.gitignore, LICENSE)
+        "tools" // Developer tools, scripts, or utilities
     ],
     "python.testing.pytestArgs": [
         "tests"
