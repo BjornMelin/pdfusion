@@ -36,5 +36,10 @@
         "security", // Security-related changes
         "accessibility", // Accessibility improvements
         "init" // Initial commits to a new repository
-    ]
+    ],
+    "python.testing.pytestArgs": [
+        "tests"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
 }
