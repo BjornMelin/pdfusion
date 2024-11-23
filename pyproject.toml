@@ -47,6 +47,7 @@ dev = [
 test = [
   "pytest>=8.0.0",
   "pytest-cov>=6.0.0",
+  "pytest-benchmark>=5.0.0",
 ]
 
 [project.scripts]
@@ -106,10 +107,3 @@ select = [
   "TRY",
 ]
 target-version = "py38"
-
-[tool.pytest.ini_options]
-addopts = "-ra -q --cov=pdfusion"
-minversion = "7.0"
-testpaths = [
-  "tests",
-]
