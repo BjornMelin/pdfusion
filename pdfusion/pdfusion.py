@@ -5,6 +5,9 @@ PDFusion - A lightweight utility for merging multiple PDF files.
 This module provides both a command-line interface and a Python API
 for combining multiple PDF files into a single document while preserving
 quality and maintaining original file order.
+
+Author: Bjorn Melin
+Date: 11/23/2024
 """
 
 from __future__ import annotations
@@ -32,34 +35,59 @@ logger = log_utils.get_logger(__name__)
 
 
 class MergeResult(NamedTuple):
-    """Result of a PDF merge operation."""
+    """
+    Result of a PDF merge operation.
 
+    Attributes
+    ----------
+    output_path : Path
+        The path to the merged PDF file.
+    files_merged : int
+        The number of PDF files merged.
+    total_pages : int
+        The total number of pages in the merged PDF.
+    """
     output_path: Path
     files_merged: int
     total_pages: int
 
 
 def setup_logging(verbose: bool = False) -> None:
-    """Configure logging for the application.
+    """
+    Configure logging for the application.
 
-    Args:
-        verbose: Whether to enable debug logging.
+    Parameters
+    ----------
+    verbose : bool, optional
+        Whether to enable debug logging (default is False).
+
+    Returns
+    -------
+    None
     """
     log_utils.setup_logging(verbose=verbose)
 
 
 def get_pdf_files(directory: PathLike) -> Sequence[Path]:
-    """Get all PDF files from the specified directory.
+    """
+    Get all PDF files from the specified directory.
 
-    Args:
-        directory: Path to the directory containing PDF files.
+    Parameters
+    ----------
+    directory : PathLike
+        Path to the directory containing PDF files.
 
-    Returns:
+    Returns
+    -------
+    Sequence[Path]
         A sequence of paths to PDF files, sorted alphabetically.
 
-    Raises:
-        NoPDFsFoundError: If no PDF files are found in the directory.
-        PDFusionError: If there's an error accessing the directory.
+    Raises
+    ------
+    NoPDFsFoundError
+        If no PDF files are found in the directory.
+    PDFusionError
+        If there's an error accessing the directory.
     """
     dir_path = Path(directory)
 
@@ -86,21 +114,31 @@ def get_pdf_files(directory: PathLike) -> Sequence[Path]:
 def merge_pdfs(
     input_dir: PathLike, output_filename: str | None = None, *, verbose: bool = False
 ) -> MergeResult:
-    """Merge all PDF files in the specified directory into a single PDF file.
+    """
+    Merge all PDF files in the specified directory into a single PDF file.
 
-    Args:
-        input_dir: Path to the directory containing PDF files.
-        output_filename: Name for the output file. If not provided,
-            a timestamp-based name will be used.
-        verbose: Whether to print detailed progress information.
+    Parameters
+    ----------
+    input_dir : PathLike
+        Path to the directory containing PDF files.
+    output_filename : str, optional
+        Name for the output file. If not provided, a timestamp-based name will be used.
+    verbose : bool, optional
+        Whether to print detailed progress information (default is False).
 
-    Returns:
-        MergeResult containing output path and merge statistics.
+    Returns
+    -------
+    MergeResult
+        A named tuple containing output path and merge statistics.
 
-    Raises:
-        PDFusionError: Base class for all PDFusion-related errors.
-        NoPDFsFoundError: If no PDF files are found in the directory.
-        PDFusionMergeError: If an error occurs during the merging process.
+    Raises
+    ------
+    PDFusionError
+        Base class for all PDFusion-related errors.
+    NoPDFsFoundError
+        If no PDF files are found in the directory.
+    PDFusionMergeError
+        If an error occurs during the merging process.
     """
     setup_logging(verbose)
     merger = PdfMerger()
@@ -154,7 +192,13 @@ def merge_pdfs(
 
 
 def main() -> None:
-    """Command-line interface for PDFusion."""
+    """
+    Command-line interface for PDFusion.
+
+    Returns
+    -------
+    None
+    """
     import argparse
 
     parser = argparse.ArgumentParser(
