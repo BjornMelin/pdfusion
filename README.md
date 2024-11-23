@@ -1,17 +1,39 @@
-# PDFusion
+# 📄 PDFusion
 
 A lightweight Python utility for effortlessly merging multiple PDF files into a single document.
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+[![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/release/python-3110/)
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](CONTRIBUTING.md)
 [![GitHub](https://img.shields.io/badge/GitHub-BjornMelin-181717?logo=github)](https://github.com/BjornMelin)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Bjorn%20Melin-0077B5?logo=linkedin)](https://www.linkedin.com/in/bjorn-melin/)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/charliermarsh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 
-## Description
+## 📋 Table of Contents
+
+- [📝 Description](#-description)
+  - [🚀 Key Features](#-key-features)
+- [📂 Repository Structure](#-repository-structure)
+- [💻 Installation](#-installation)
+  - [For Users 🌟](#for-users-)
+  - [For Developers 🔧](#for-developers-)
+- [🎮 Usage](#-usage)
+  - [Command Line Interface](#command-line-interface)
+  - [Python API](#python-api)
+- [🛠️ Development](#️-development)
+  - [Running Tests](#running-tests)
+- [🤝 Contributing](#-contributing)
+- [👨‍💻 Author](#-author)
+- [📜 License](#-license)
+- [🌟 Star History](#-star-history)
+- [🙏 Acknowledgments](#-acknowledgments)
+
+## 📝 Description
 
 PDFusion is a simple yet powerful command-line tool that makes it easy to combine multiple PDF files into a single document while preserving the original quality. Perfect for combining reports, consolidating documentation, or organizing digital paperwork.
 
-### Key Features
+### 🚀 Key Features
 
 - 📁 Merge all PDFs in a directory with a single command
 - 🔄 Automatic alphabetical ordering of files
@@ -20,95 +42,145 @@ PDFusion is a simple yet powerful command-line tool that makes it easy to combin
 - 💡 Clear progress feedback and error handling
 - 🔒 Maintains original PDF quality
 - 📝 Detailed logging of the merge process
+- 🔍 Type hints with full mypy support
+- 🧪 Comprehensive test coverage (>90%)
+- 📊 Performance benchmarks included
+- 🐛 Custom exception handling
+- 🎯 Supports Python 3.11+
 
-## Why PDFusion?
+## 📂 Repository Structure
 
-The name "PDFusion" combines "PDF" with "fusion" to create a memorable and meaningful name that:
-
-- Clearly indicates the tool's purpose (PDF merging)
-- Suggests the idea of combining/fusion
-- Is easy to remember and type
-- Has a professional yet approachable feel
-- Is unique enough to stand out in searches
-- Works well as both a command name and package name
-
-## Script Name
-
-The main script is named `pdfusion.py`, following Python naming conventions with:
-
-- All lowercase letters
-- No spaces (using underscores if needed)
-- Clear indication of purpose
-- Easy to type and remember
-
-The script can be invoked simply as:
-
-```bash
-python pdfusion.py /path/to/pdfs -o merged.pdf
+```mermaid
+graph TD
+    A[pdfusion/] --> B[pdfusion/]
+    A --> C[tests/]
+    A --> D[examples/]
+    A --> E[Documentation]
+    
+    B --> B1[__init__.py]
+    B --> B2[exceptions.py]
+    B --> B3[logging.py]
+    B --> B4[pdfusion.py]
+    B --> B5[py.typed]
+    
+    C --> C1[__init__.py]
+    C --> C2[conftest.py]
+    C --> C3[test files]
+    
+    D --> D1[basic_usage.py]
+    
+    E --> E1[README.md]
+    E --> E2[LICENSE]
+    E --> E3[CONTRIBUTING.md]
+    E --> E4[Configuration Files]
 ```
 
-## Repository Structure
+## 💻 Installation
 
-```plaintext
-pdfusion/
-├── pdfusion.py
-├── README.md
-├── requirements.txt
-├── setup.py
-├── tests/
-│   └── test_pdfusion.py
-├── examples/
-│   └── basic_usage.py
-└── .gitignore
-```
-
-## Setting Up a Virtual Environment
-
-To ensure that the project dependencies are isolated and do not interfere with other projects, it is recommended to use a virtual environment. Follow these steps to set up and activate a virtual environment:
-
-1. Install the `virtualenv` package if you haven't already:
-
-    ```bash
-    pip install virtualenv
-    ```
-
-2. Create a new virtual environment in the project directory:
-
-    ```bash
-    virtualenv venv
-    ```
-
-3. Activate the virtual environment:
-
-    - On Windows:
-
-        ```bash
-        .\venv\Scripts\activate
-        ```
-
-    - On macOS and Linux:
-
-        ```bash
-        source venv/bin/activate
-        ```
-
-4. Install the project dependencies:
-
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-## Installation
+### For Users 🌟
 
 ```bash
 pip install pdfusion
 ```
 
-<!-- ## Usage
+### For Developers 🔧
 
-[Usage instructions would go here] -->
+```mermaid
+graph LR
+    A[Clone Repository] --> B[Create Virtual Environment]
+    B --> C[Activate Environment]
+    C --> D[Install Dependencies]
+    D --> E[Ready to Develop!]
+```
 
-## Contributing
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/BjornMelin/pdfusion.git
+    cd pdfusion
+    ```
+
+2. Create a virtual environment:
+
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # On Windows: .\venv\Scripts\activate
+    ```
+
+    > **Note:** You can also use `virtualenv` instead of `venv`. See the [Virtual Environment Setup Guide](docs/virtualenv-setup.md) for more details.
+
+3. Install development dependencies:
+
+    ```bash
+    pip install -r requirements-dev.txt
+    ```
+
+## 🎮 Usage
+
+### Command Line Interface
+
+```mermaid
+graph LR
+    A[Input Directory] --> B[PDFusion CLI]
+    B --> C[Processing]
+    C --> D[Merged PDF]
+    style B fill:#f9f,stroke:#333,stroke-width:4px
+```
+
+```bash
+# Basic usage
+pdfusion /path/to/pdfs -o merged.pdf
+
+# With verbose output
+pdfusion /path/to/pdfs -v
+
+# Auto timestamp filename
+pdfusion /path/to/pdfs
+```
+
+### Python API
+
+```python
+from pdfusion import merge_pdfs
+
+# Basic usage
+result = merge_pdfs("/path/to/pdfs", "output.pdf")
+print(f"Merged {result.files_merged} files into {result.output_path}")
+
+# With verbose output
+result = merge_pdfs("/path/to/pdfs", verbose=True)
+print(f"Total pages in merged PDF: {result.total_pages}")
+```
+
+## 🛠️ Development
+
+### Running Tests
+
+```bash
+# Run all tests
+pytest
+
+# Run with coverage report
+pytest --cov=pdfusion
+
+# Run performance benchmarks
+pytest tests/test_pdfusion.py -v -m benchmark
+
+# Run specific test file
+pytest tests/test_pdfusion.py -v
+```
+
+## 🤝 Contributing
+
+```mermaid
+graph LR
+    A[Fork Repository] --> B[Create Feature Branch]
+    B --> C[Make Changes]
+    C --> D[Commit Changes]
+    D --> E[Push to Branch]
+    E --> F[Open Pull Request]
+    style F fill:#f96,stroke:#333,stroke-width:4px
+```
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feat/version/AmazingFeature`)
@@ -127,8 +199,8 @@ pip install pdfusion
 
 AWS-certified Solutions Architect and Developer with expertise in cloud architecture and modern development practices. Connect with me on:
 
-- [GitHub](https://github.com/BjornMelin)
-- [LinkedIn](https://www.linkedin.com/in/bjorn-melin/)
+- 🌐 [GitHub](https://github.com/BjornMelin)
+- 💼 [LinkedIn](https://www.linkedin.com/in/bjorn-melin/)
 
 Project Link: [https://github.com/BjornMelin/pdfusion](https://github.com/BjornMelin/pdfusion)
 
@@ -142,10 +214,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- [Python](https://www.python.org/)
-- [pypdf2](https://pypdf.readthedocs.io/en/stable/)
-- [GitHub Badges](https://shields.io/)
+- 🐍 [Python](https://www.python.org/)
+- 📄 [pypdf2](https://pypdf.readthedocs.io/en/stable/)
+- 🏷️ [GitHub Badges](https://shields.io/)
 
 <div align="center">
-    <strong>Built with Python 3.11 + pypdf2 by Bjorn Melin</strong>
+    <h3>⚡ Built with Python 3.11 + pypdf2 by Bjorn Melin</h3>
 </div>
