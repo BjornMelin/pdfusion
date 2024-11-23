@@ -24,6 +24,7 @@ PDFusion is a simple yet powerful command-line tool that makes it easy to combin
 ## Why PDFusion?
 
 The name "PDFusion" combines "PDF" with "fusion" to create a memorable and meaningful name that:
+
 - Clearly indicates the tool's purpose (PDF merging)
 - Suggests the idea of combining/fusion
 - Is easy to remember and type
@@ -34,19 +35,21 @@ The name "PDFusion" combines "PDF" with "fusion" to create a memorable and meani
 ## Script Name
 
 The main script is named `pdfusion.py`, following Python naming conventions with:
+
 - All lowercase letters
 - No spaces (using underscores if needed)
 - Clear indication of purpose
 - Easy to type and remember
 
 The script can be invoked simply as:
+
 ```bash
 python pdfusion.py /path/to/pdfs -o merged.pdf
 ```
 
 ## Repository Structure
 
-```
+```plaintext
 pdfusion/
 ├── pdfusion.py
 ├── README.md
@@ -59,23 +62,59 @@ pdfusion/
 └── .gitignore
 ```
 
+## Setting Up a Virtual Environment
+
+To ensure that the project dependencies are isolated and do not interfere with other projects, it is recommended to use a virtual environment. Follow these steps to set up and activate a virtual environment:
+
+1. Install the `virtualenv` package if you haven't already:
+
+    ```bash
+    pip install virtualenv
+    ```
+
+2. Create a new virtual environment in the project directory:
+
+    ```bash
+    virtualenv venv
+    ```
+
+3. Activate the virtual environment:
+
+    - On Windows:
+
+        ```bash
+        .\venv\Scripts\activate
+        ```
+
+    - On macOS and Linux:
+
+        ```bash
+        source venv/bin/activate
+        ```
+
+4. Install the project dependencies:
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
 ## Installation
 
 ```bash
 pip install pdfusion
 ```
 
-## Usage
+<!-- ## Usage
 
-[Usage instructions would go here]
+[Usage instructions would go here] -->
 
 ## Contributing
 
 1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+2. Create your feature branch (`git checkout -b feat/version/AmazingFeature`)
+3. Commit your changes (`git commit -m 'type(scope): Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feat/version/AmazingFeature`)
+5. Open a Pull Request (`feat(scope): Add some AmazingFeature`)
 
 ## 👨‍💻 Author
 
@@ -105,7 +144,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - [Python](https://www.python.org/)
 - [pypdf2](https://pypdf.readthedocs.io/en/stable/)
-
+- [GitHub Badges](https://shields.io/)
 
 <div align="center">
     <strong>Built with Python 3.11 + pypdf2 by Bjorn Melin</strong>
