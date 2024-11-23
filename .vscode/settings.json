@@ -13,24 +13,12 @@
         // Styling
         "styles", // General styling changes
         "theme", // Tailwind CSS theme configurations
-        "classes", // Tailwind utility class adjustments
-        "plugins", // Tailwind CSS plugin modifications
-        "animations", // Animations and transitions
         
         // shadcn/ui Specific
         "ui", // shadcn/ui component updates
         "tokens", // Design tokens (e.g., colors, spacing)
         "variants", // Component variants
         "dark-mode", // Dark mode specific changes
-        
-        // Next.js Specific
-        "api", // API route changes
-        "middleware", // Middleware updates
-        "routing", // Routing and navigation
-        "rendering", // Rendering strategies (SSR, SSG)
-        "server", // Custom server configurations
-        "assets", // Static assets (e.g., images, fonts)
-        "seo", // SEO enhancements
         
         // Tooling and Infrastructure
         "config", // Configuration files (e.g., eslint, tailwind.config.js)
