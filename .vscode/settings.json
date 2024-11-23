@@ -1,0 +1,51 @@
+{
+    "conventionalCommits.scopes": [
+        // Application Structure
+        "app", // Application-wide changes
+        "pages", // Modifications to individual Next.js pages
+        "components", // Updates to reusable UI components
+        "layout", // Changes to global layout elements (e.g., header, footer, navigation)
+        "hooks", // Custom React hooks
+        "utils", // Utility functions and helper methods
+        "state", // State management (e.g., Redux, Context API)
+        "context", // Context API implementations
+        
+        // Styling
+        "styles", // General styling changes
+        "theme", // Tailwind CSS theme configurations
+        "classes", // Tailwind utility class adjustments
+        "plugins", // Tailwind CSS plugin modifications
+        "animations", // Animations and transitions
+        
+        // shadcn/ui Specific
+        "ui", // shadcn/ui component updates
+        "tokens", // Design tokens (e.g., colors, spacing)
+        "variants", // Component variants
+        "dark-mode", // Dark mode specific changes
+        
+        // Next.js Specific
+        "api", // API route changes
+        "middleware", // Middleware updates
+        "routing", // Routing and navigation
+        "rendering", // Rendering strategies (SSR, SSG)
+        "server", // Custom server configurations
+        "assets", // Static assets (e.g., images, fonts)
+        "seo", // SEO enhancements
+        
+        // Tooling and Infrastructure
+        "config", // Configuration files (e.g., eslint, tailwind.config.js)
+        "deps", // Dependency management
+        "ci", // Continuous Integration setups
+        "build", // Build process configurations
+        "lint", // Linting rules and fixes
+        "testing", // Testing frameworks and test cases
+        "scripts", // NPM scripts and package.json updates
+        "env", // Environment variables and .env files
+
+        // Documentation and Miscellaneous
+        "docs", // Documentation updates
+        "setup", // Initial project setup
+        "security", // Security-related changes
+        "accessibility" // Accessibility improvements
+    ]
+}
