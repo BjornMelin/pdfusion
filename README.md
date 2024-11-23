@@ -117,6 +117,27 @@ graph LR
 
 ## 🎮 Usage
 
+### Quick Start Guide
+
+1. **Install PDFusion**
+
+   ```bash
+   pip install pdfusion
+   ```
+
+2. **Prepare Your PDFs**
+   - Create a directory with your PDF files
+   - Example structure:
+
+     ```plaintext
+     my_pdfs/
+     ├── document1.pdf
+     ├── document2.pdf
+     └── document3.pdf
+     ```
+
+3. **Run PDFusion**
+
 ### Command Line Interface
 
 ```mermaid
@@ -138,19 +159,82 @@ pdfusion /path/to/pdfs -v
 pdfusion /path/to/pdfs
 ```
 
+#### CLI Options
+
+- `-o, --output`: Output filename (optional)
+- `-v, --verbose`: Enable verbose output
+- `--version`: Show version number
+- `-h, --help`: Show help message
+
 ### Python API
 
 ```python
 from pdfusion import merge_pdfs
 
-# Basic usage
-result = merge_pdfs("/path/to/pdfs", "output.pdf")
+# Example 1: Basic usage
+result = merge_pdfs(
+    input_dir="/path/to/pdfs",
+    output_file="merged.pdf"
+)
 print(f"Merged {result.files_merged} files into {result.output_path}")
 
-# With verbose output
-result = merge_pdfs("/path/to/pdfs", verbose=True)
+# Example 2: With verbose output and auto timestamp
+result = merge_pdfs(
+    input_dir="/path/to/pdfs",
+    verbose=True
+)
 print(f"Total pages in merged PDF: {result.total_pages}")
+
+# Example 3: Full options
+result = merge_pdfs(
+    input_dir="/path/to/pdfs",
+    output_file="merged.pdf",
+    verbose=True,
+    sort_files=True,  # Sort files alphabetically
+    add_bookmarks=True  # Add bookmarks for each merged PDF
+)
 ```
+
+### Example Project Structure
+
+Create a simple script `merge_my_pdfs.py`:
+
+```python
+from pdfusion import merge_pdfs
+import logging
+
+# Set up logging (optional)
+logging.basicConfig(level=logging.INFO)
+
+# Merge PDFs
+try:
+    result = merge_pdfs(
+        input_dir="./my_pdfs",
+        output_file="merged_document.pdf",
+        verbose=True
+    )
+    print(f"Successfully merged {result.files_merged} files!")
+    print(f"Output saved to: {result.output_path}")
+    print(f"Total pages: {result.total_pages}")
+
+except Exception as e:
+    print(f"Error merging PDFs: {e}")
+```
+
+Run your script:
+
+```bash
+python merge_my_pdfs.py
+```
+
+### Output Format
+
+The `merge_pdfs` function returns a result object with the following attributes:
+
+- `files_merged`: Number of files merged
+- `output_path`: Path to the merged PDF
+- `total_pages`: Total number of pages in the merged PDF
+- `processing_time`: Time taken to merge the PDFs
 
 ## 🛠️ Development
 
