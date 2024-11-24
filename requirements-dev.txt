@@ -3,6 +3,7 @@
 # Testing
 pytest>=8.0.0
 pytest-cov>=6.0.0
+pytest-benchmark>=5.0.0
 
 # Linting & Formatting
 black>=24.10.0
