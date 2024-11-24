@@ -1,0 +1,59 @@
+{
+    "conventionalCommits.scopes": [
+        // Core functionality
+        "core", // Central logic or main application framework
+        "api", // API endpoints or service layers
+        "cli", // Command-line interface tools or scripts
+        "models", // Database models or data schemas
+        "services", // External services or integrations
+        
+        // Features and functionality
+        "auth", // Authentication and authorization logic
+        "logic", // Application-specific business logic
+        "db", // Database changes (migrations, queries)
+        "ui", // User interface or frontend changes
+        "tasks", // Background tasks or job processing (e.g., Celery)
+        
+        // Configuration and dependencies
+        "config", // Configuration files or environment setup
+        "deps", // Dependency updates (e.g., requirements.txt)
+        "env", // Environment-related changes (e.g., .env files)
+        
+        // Testing and quality
+        "tests", // Unit tests, integration tests, or mocking
+        "qa", // Quality assurance (linters, type checks, etc.)
+        "coverage", // Code coverage configurations or reports
+        
+        // Documentation
+        "docs", // Documentation updates (README, inline comments)
+        "examples", // Example scripts or usage guides
+        "tutorials", // Tutorials or learning materials
+        
+        // DevOps and deployment
+        "ci", // Continuous Integration workflows or pipelines
+        "cd", // Continuous Deployment scripts or setups
+        "infra", // Infrastructure changes (Dockerfiles, Terraform)
+        "build", // Build process updates (e.g., PyInstaller, packaging)
+        
+        // Fixes and maintenance
+        "bug", // Bug fixes or patches
+        "refactor", // Code restructuring without functional changes
+        "perf", // Performance optimizations
+        "security", // Security-related changes (vulnerability fixes)
+
+        // Styling and user experience
+        "styles", // Code style, formatting, or aesthetic updates
+        "i18n", // Internationalization and localization changes
+        "ux", // User experience improvements
+        
+        // Miscellaneous
+        "release", // Versioning or release preparation
+        "meta", // Updates to meta files (.gitignore, LICENSE)
+        "tools" // Developer tools, scripts, or utilities
+    ],
+    "python.testing.pytestArgs": [
+        "tests"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
+}

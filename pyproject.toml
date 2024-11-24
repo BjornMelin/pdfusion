@@ -1,0 +1,109 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = ["setuptools>=61.0", "wheel", "setuptools_scm>=7.0"]
+
+[project]
+authors = [
+  {name = "Bjorn Melin", email = "bjornmelin16@gmail.com"},
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Environment :: Console",
+  "Intended Audience :: End Users/Desktop",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Office/Business",
+  "Topic :: Utilities",
+  "Intended Audience :: Developers",
+  "Natural Language :: English",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+  "PyPDF2>=3.0.0,<4.0.0",
+]
+description = "A lightweight Python utility for effortlessly merging multiple PDF files"
+dynamic = ["version"]
+keywords = ["pdf", "merge", "pypdf2", "automation", "cli"]
+license = {text = "MIT"}
+name = "pdfusion"
+readme = "README.md"
+requires-python = ">=3.8.1,<4.0"
+urls = {Homepage = "https://github.com/BjornMelin/pdfusion"}
+
+[project.optional-dependencies]
+dev = [
+  "black>=24.10.0",
+  "isort>=5.12.0,<6.0.0",
+  "flake8>=7.0.0",
+  "mypy>=1.5.0,<2.0.0",
+  "ruff>=0.8.0",
+]
+test = [
+  "pytest>=8.0.0",
+  "pytest-cov>=6.0.0",
+  "pytest-benchmark>=5.0.0",
+]
+
+[project.scripts]
+pdfusion = "pdfusion.pdfusion:main"
+
+[tool.setuptools_scm]
+write_to = "pdfusion/_version.py"
+
+[tool.black]
+include = '\.pyi?$'
+line-length = 88
+target-version = ["py38", "py39", "py310", "py311", "py312"]
+
+[tool.isort]
+line_length = 88
+multi_line_output = 3
+profile = "black"
+
+[tool.mypy]
+disallow_untyped_defs = true
+python_version = "3.8"
+strict = true
+warn_return_any = true
+warn_unused_configs = true
+
+[tool.ruff]
+ignore = []
+line-length = 88
+select = [
+  "E",
+  "F",
+  "B",
+  "I",
+  "W",
+  "C",
+  "B",
+  "UP",
+  "N",
+  "D",
+  "S",
+  "BLE",
+  "FBT",
+  "A",
+  "COM",
+  "DTZ",
+  "T20",
+  "RET",
+  "SLF",
+  "ARG",
+  "PTH",
+  "ERA",
+  "PD",
+  "PLC",
+  "PLE",
+  "PLR",
+  "PLW",
+  "TRY",
+]
+target-version = "py38"
