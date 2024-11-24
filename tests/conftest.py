@@ -39,7 +39,10 @@ def temp_dir(tmp_path: Path) -> Generator[Path, None, None]:
     yield tmp_path
     # Cleanup after tests
     if tmp_path.exists():
-        shutil.rmtree(tmp_path)
+        try:
+            shutil.rmtree(tmp_path)
+        except PermissionError:
+            pass  # Handle PermissionError
 
 
 @pytest.fixture
