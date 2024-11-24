@@ -18,7 +18,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Final, NamedTuple, Sequence
 
-from PyPDF2 import PdfMerger
+from PyPDF2 import PdfMerger, PdfReader
 
 from .exceptions import NoPDFsFoundError, PDFusionError, PDFusionMergeError
 
@@ -166,8 +166,6 @@ def merge_pdfs(
                 merger.append(str(pdf_file))
                 with open(pdf_file, "rb") as f:
                     # Count pages in the PDF
-                    from PyPDF2 import PdfReader
-
                     total_pages += len(PdfReader(f).pages)
             except Exception as e:
                 raise PDFusionMergeError(filename=str(pdf_file), original_error=e)

@@ -13,7 +13,7 @@ from pathlib import Path
 from unittest.mock import patch
 
 import pytest
-from PyPDF2 import PdfReader
+from PyPDF2 import PdfReader, PdfWriter
 
 from pdfusion import (
     NoPDFsFoundError,
@@ -442,13 +442,13 @@ def test_merge_pdfs_resource_cleanup(sample_pdfs: Path) -> None:
     import os
 
     process = psutil.Process(os.getpid())
-    initial_handles = process.num_fds()  # Unix
+    initial_handles = process.num_handles()  # Cross-platform
 
     # Perform multiple merges
     for i in range(5):
         merge_pdfs(sample_pdfs, f"cleanup_test_{i}.pdf")
 
-    final_handles = process.num_fds()
+    final_handles = process.num_handles()
 
     # Check for file descriptor leaks
     assert final_handles <= initial_handles + 1  # Allow for small variation

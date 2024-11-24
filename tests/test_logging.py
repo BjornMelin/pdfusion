@@ -10,6 +10,7 @@ Date: 11/7/2024
 """
 
 import logging
+import sys
 from io import StringIO
 
 import pytest
